@@ -1,0 +1,46 @@
+.btn {
+    position: relative;
+    place-content: center;
+    place-items: center;
+    width: fit-content;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0;
+    padding: 0.85rem .6rem;
+    color: #ffffff;
+    background-color: rgb(60, 62, 68);
+    border: 1px solid rgb(60, 62, 68);
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.22s;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+    &:disabled {
+        color: #999999!important;
+        background-color: #eeeeee!important;
+        border-color: #dddddd!important;
+        opacity: 1!important;
+        cursor: not-allowed;
+    }
+
+    &:active {
+        box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    &.primary {
+        color: #ffffff;
+        background-color: #42b983;
+    }
+}

@@ -1,0 +1,109 @@
+.form {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+
+    &-title {
+        font-weight: 800;
+    }
+
+    &-control {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 0 0 0.5rem 0;
+        padding: 0;
+
+        & input,
+        & select,
+        & textarea {
+            display: block;
+            width: 100%;
+            font-size: .9rem;
+            margin: 0;
+            padding: 0.7rem 1.0rem;
+            color: #202329;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            outline: none;
+            resize: none;
+            font-family: 'Segoe UI', sans-serif;
+            box-shadow: 0 3px 4px -5px rgba(0, 0, 0, .5);
+        }
+
+        & input::-webkit-input-placeholder {
+            font-size: .9rem;
+            color: rgb(158, 158, 158);
+        }
+
+        & input:-moz-input-placeholder {
+            font-size: .9rem;
+            color: rgb(158, 158, 158);
+        }
+
+        & input::-moz-input-placeholder {
+            font-size: .9rem;
+            color: rgb(158, 158, 158);
+        }
+
+        & input:-ms-input-placeholder {
+            font-size: .9rem;
+            color: rgb(158, 158, 158);
+        }
+
+        & small {
+            color: #e53935;
+        }
+
+        &.invalid input {
+            border-color: #e53935;
+        }
+
+        & label {
+            display: block;
+            font-weight: 500;
+            margin: 0 0 0.3rem 0.3rem;
+        }
+
+        & input:active,
+        & input:focus {
+            transition: border 0.22s;
+            border: 1px solid rgb(255, 152, 0);
+        }
+    }
+
+    &-checkbox {
+        margin-bottom: 1rem;
+
+        &.label {
+            display: block;
+            font-weight: 500;
+            margin: 0 0 0.3rem 0.3rem;
+        }
+
+        &.checkbox input {
+            margin-right: 1rem;
+        }
+    }
+
+    &-count {
+        font-weight: 400;
+        margin: .8rem 0 0 0;
+        padding: 0;
+        color: #202329;
+
+        &-to {
+            margin: 0;
+            padding: 0;
+            color: rgb(255, 152, 0);
+        }
+
+        &-from {
+            margin: 0;
+            padding: 0;
+            color: #202329;
+        }
+    }
+}
