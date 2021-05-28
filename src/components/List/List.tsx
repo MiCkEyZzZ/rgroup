@@ -2,11 +2,8 @@ import React from 'react'
 
 import './List.scss'
 
-
 import {ButtonUsers, LinkUsers} from '../index'
 import { makeShortTitleText } from '../../utils/common'
-
-const favorites = 'favorites'
 
 interface IListProps {
     personages: {
@@ -22,11 +19,7 @@ interface IListProps {
 }
 
 const List: React.FC<IListProps> = ({personages, error}) => {
-    const addUserFavorite = (id: number) => {
-        // dispatch(addFavorite(id))
-        const user = personages.find(personage => personage.id === id)
-        localStorage.setItem(favorites, JSON.stringify([user]))
-    }
+    const addUserFavorite = (id: number) => {}
 
     if (error) {
         return (

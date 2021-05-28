@@ -4,13 +4,13 @@ import './Form.scss'
 
 interface IFormProps {
     value: string
-    page: number
+    currentPage: number
     pages: number
     name: string
     onChangeInput: (evt: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Form: React.FC<IFormProps> = ({value, page, pages, name, onChangeInput}) => {
+const Form: React.FC<IFormProps> = ({value, currentPage, pages, name, onChangeInput}) => {
     return (
         <div className="form">
             <h2 className='form-title'>A test task for the ResolventaGroup company.</h2>
@@ -24,7 +24,7 @@ const Form: React.FC<IFormProps> = ({value, page, pages, name, onChangeInput}) =
                     onChange={onChangeInput}
                 />
                 <p className='form-count'>
-                    <span className='form-count-to'>{page}</span>&nbsp;/&nbsp;
+                    <span className='form-count-to'>{currentPage}</span>&nbsp;/&nbsp;
                     <span className='form-count-from'>{pages}</span>
                 </p>
             </form>

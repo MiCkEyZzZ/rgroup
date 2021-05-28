@@ -7,9 +7,9 @@ import {User} from './pages/User/User'
 export const useRoutes = () => {
     return (
         <Switch>
-            <Route path='/personages' exact component={Users} />
+            <Route path='/personages/' exact component={Users} />
             <Route path='/personages/personage/:id' exact component={User} />
-            <Redirect to='/personages' />
+            <Redirect to='/personages/' />
         </Switch>
     )
 }

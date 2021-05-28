@@ -4,9 +4,11 @@ const initialState = {
     users: [],
     favorites: [],
     info: {},
+    page: 1,
+    dataLimit: 10,
+    pageLimit: 5,
     loading: false,
     error: null,
-    currentPage: 1,
     query: '',
     sortByGender: '',
     sortByStatus: ''
@@ -27,7 +29,7 @@ export const dataUsersReducer = (state: UsersState = initialState, action: Users
         case UsersActionTypes.FETCH_INFO_ERROR:
             return {...state, info: {}, loading: false, error: action.payload}
         case UsersActionTypes.FETCH_USERS_PAGE:
-            return {...state, currentPage: action.payload}
+            return {...state, page: action.payload}
         case UsersActionTypes.FETCH_USERS_QUERY:
             return {...state, query: action.payload}
         case UsersActionTypes.FETCH_SORT_BY_GENDER:
