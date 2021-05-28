@@ -2,11 +2,11 @@ import {Dispatch} from 'redux'
 import {GENDER_PATH, NAME_PATH, PAGE_PATH, STATUS_PATH, URL} from '../../apis/api'
 import {UsersAction, UsersActionTypes} from '../type'
 
-export const fetchUsersList = (currentPage: number, query: string, sortByGender: string, sortByStatus: string) => async (dispatch: Dispatch<UsersAction>) => {
+export const fetchUsersList = (page: number, query: string, sortByGender: string, sortByStatus: string) => async (dispatch: Dispatch<UsersAction>) => {
     try {
         dispatch({type: UsersActionTypes.FETCH_USERS})
         dispatch({type: UsersActionTypes.FETCH_INFO})
-        const response = await fetch(`${URL}${PAGE_PATH}/${currentPage}${NAME_PATH}${query}${sortByGender !== null ? `${GENDER_PATH}${sortByGender}` : ``}${sortByStatus !== null ? `${STATUS_PATH}${sortByStatus}` : ``}`, {method: `GET`})
+        const response = await fetch(`${URL}${PAGE_PATH}${page}${NAME_PATH}${query}${sortByGender !== null ? `${GENDER_PATH}${sortByGender}` : ``}${sortByStatus !== null ? `${STATUS_PATH}${sortByStatus}` : ``}`, {method: `GET`})
             .then(response => response.json())
         setTimeout(() => {
             dispatch({type: UsersActionTypes.FETCH_USERS_SUCCESS, payload: response.results})
@@ -20,9 +20,9 @@ export const fetchUsersList = (currentPage: number, query: string, sortByGender:
     }
 }
 
-export const setUsersPage = (currentPage: number) => {
+export const setUsersPage = (page: number) => {
     return {
-        type: UsersActionTypes.FETCH_USERS_PAGE, payload: currentPage
+        type: UsersActionTypes.FETCH_USERS_PAGE, payload: page
     }
 }
 

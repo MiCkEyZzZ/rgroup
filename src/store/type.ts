@@ -3,10 +3,12 @@ export interface UsersState {
     info: any
     loading: boolean
     error: null | string
-    currentPage: number,
+    page: number,
     query: string,
     sortByGender: string
     sortByStatus: string
+    dataLimit: number
+    pageLimit: number
 }
 
 export enum UsersActionTypes {

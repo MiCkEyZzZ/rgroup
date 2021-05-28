@@ -2,26 +2,23 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 import './PaginationItems.scss'
-import {getPagesCount} from '../../utils/common'
 
 interface IPaginationProps {
-    currentPage: number
-    count: number
+    personages: {}[]
+    page: number
     pages: number
-    onClickPaginationNext: () => void
-    onClickPaginationPrev: () => void
-    setUsersPage: Function
+    pageLimit: number
+    onNextPage: (page: number) => void
+    onPrevPage: (page: number) => void
+    onChangePage: (page: number) => void
 }
 
-const PaginationItems: React.FC<IPaginationProps> = ({currentPage, pages, count, onClickPaginationPrev, onClickPaginationNext, setUsersPage}) => {
-    const pagesItems = getPagesCount(pages)
-    const perPage = 5
-    console.log(pagesItems)
-    const lastPage = currentPage * perPage
-    const firstPage = lastPage - perPage
-    const currentTodos = pagesItems.slice(firstPage, lastPage)
-
-    const renderElement = () => {}
+const PaginationItems: React.FC<IPaginationProps> = ({page, pages, personages, pageLimit, onNextPage, onPrevPage, onChangePage}) => {
+    const getPaginationGroup = () => {
+        let start = Math.floor((page - 1) / pageLimit) * pageLimit
+        // @ts-ignore
+        return new Array(pageLimit).fill().map((_, idx) => start + idx + 1)
+    }
 
     return (
         <>
@@ -30,47 +27,33 @@ const PaginationItems: React.FC<IPaginationProps> = ({currentPage, pages, count,
                     <ul className="pagination-list">
                         <li className="pagination-list__item">
                             <Link
-                                to={`?page=${currentPage}`}
-                                className="pagination-list__item-link"
-                            >First</Link>
-                        </li>
-
-                        <li className="pagination-list__item">
-                            <Link
-                                to={`?page=${currentPage - 1}`}
-                                className="pagination-list__item-link"
-                                onClick={() => onClickPaginationPrev()}
+                                to={`?page=${page - 1}`}
+                                className={`pagination-list__item-prev ${page === 1 ? 'disabled' : ''}`}
+                                onClick={() => onPrevPage(page)}
                             >Prev</Link>
                        </li>
 
-                        {currentTodos.map((todo, index) => {
+                        {getPaginationGroup().map((item, index) => {
                             return (
                                 <li
                                     key={index}
                                     className="pagination-list__item"
                                 >
                                     <Link
-                                        to={`?page=${todo}`}
-                                        className='pagination-list__item-link'
-                                        onClick={() => setUsersPage(todo)}
-                                    >{todo}</Link>
+                                        to={`?page=${item}`}
+                                        className={`pagination-list__item-link ${page === item ? 'active' : 'pagination-list__item-link'}`}
+                                        onClick={() => onChangePage(item)}
+                                    >{item}</Link>
                                 </li>
                             )
                         })}
 
                         <li className="pagination-list__item">
                             <Link
-                                to={`?page=${currentPage + 1}`}
-                                className="pagination-list__item-link"
-                                onClick={() => onClickPaginationNext()}
+                                to={`?page=${page + 1}`}
+                                className={` pagination-list__item-next ${page === pages ? 'disabled' : ''}`}
+                                onClick={() => onNextPage(page)}
                             >Next</Link>
-                        </li>
-
-                        <li className="pagination-list__item">
-                            <Link
-                                to={`?page=${count}`}
-                                className="pagination-list__item-link"
-                            >Last</Link>
                         </li>
                     </ul>
                 </div>
