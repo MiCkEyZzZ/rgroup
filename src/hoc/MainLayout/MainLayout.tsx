@@ -1,17 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import './Layout.scss'
+import './MainLayout.scss'
 
-import { useRoutes } from '../../routes'
-
-export const Layout: React.FC = () => {
-    const routes = useRoutes()
-
+export const MainLayout: React.FC = () => {
     return (
         <Router>
             <>
-                {routes}
+
             </>
         </Router>
     )

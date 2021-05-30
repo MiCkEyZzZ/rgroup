@@ -1,9 +1,8 @@
 .pagination {
     padding: 1rem;
     margin-bottom: 1rem;
+    background-color: rgb(36, 40, 47);
     border-radius: 10px;
-    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
 
     &-container {
         display: flex;
@@ -44,11 +43,12 @@
                 align-items: center;
                 margin: 0;
                 padding: 5px 10px 5px 10px;
-                color: #202329;
-                background-color: #ffffff;
-                border: 1px solid #cccccc;
+                color: #ffffff;
+                background: rgb(60, 62, 68);
+                border: 1px solid #24282f;
                 border-radius: .25rem;
                 transition: all 0.22s;
+                box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
 
                 &.active {
                     color: rgb(255, 152, 0);
@@ -69,25 +69,29 @@
                 align-items: center;
                 margin: 0;
                 padding: 5px 10px 5px 10px;
-                color: #202329;
-                background-color: #ffffff;
-                border: 1px solid #cccccc;
+                color: #ffffff;
+                background-color: rgb(60, 62, 68);
+                border: 1px solid rgb(60, 62, 68);
                 border-radius: .25rem;
                 transition: all 0.22s;
+                box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+
+                &:hover {
+                    color: #ffffff;
+                    background-color: rgba(60, 62, 68, .4);
+                    border: 1px solid rgba(60, 62, 68, .4);
+                    cursor: pointer;
+                    transition: all 0.22s;
+                }
 
                 &.disabled,
                 &.disabled {
-                    color: rgba(32, 35, 41, .3);
-                    background-color: rgba(0, 0, 0, .1);
-                    border: 1px solid rgba(0, 0, 0, .1);
+                    color: #ffffff;
+                    background: rgb(60, 62, 68);
+                    border: 1px solid rgb(60, 62, 68);
                     pointer-events: none;
-
-                    &:hover {
-                        color: #eeeeee;
-                        background-color: #dddddd;
-                        border: 1px solid #dddddd;
-                        pointer-events: none;
-                    }
+                    opacity: .2;
+                    box-shadow: none;
                 }
             }
         }

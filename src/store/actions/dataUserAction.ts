@@ -13,7 +13,7 @@ export const fetchUserCard = (props: any) => async (dispatch: Dispatch<UserActio
     } catch (err) {
         dispatch({
             type: UserActionTypes.FETCH_USER_ERROR,
-            payload: 'Произошла ошибка при загрузке пользователя.'
+            payload: 'There is nothing here.'
         })
     }
 }

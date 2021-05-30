@@ -41,31 +41,33 @@ const SelectUser: React.FC<ISelectProps> = memo((props) => {
     }, [handleOutsideClick])
 
     return (
-        <div ref={sortRef} className='select'>
-            <div className='select-label'>
-                <p className='select-label-title'>{label}:</p>
-                <div
-                    className="select-label__text"
-                    onClick={onOpenSort}
-                >{activeLabel}</div>
-            </div>
-
-            {visible && (
-                <div className="select-plate">
-                    <ul className='select-plate__list'>
-                        {items.map((obj, index) => {
-                            return (
-                                <li
-                                    key={`${obj.type}_${index}`}
-                                    className={activeItem === obj.type ? 'select-plate__list-item active' : 'select-plate__list-item'}
-                                    onClick={() => onSelectItem(obj.type)}
-                                >{obj.name}</li>
-                            )
-                        })}
-                    </ul>
+        <>
+            <p className='select-label-title'>{label}:</p>
+            <div ref={sortRef} className='select'>
+                <div className='select-label'>
+                    <div
+                        className={visible ? "select-label__text active" : "select-label__text"}
+                        onClick={onOpenSort}
+                    >{activeLabel}</div>
                 </div>
-            )}
-        </div>
+
+                {visible && (
+                    <div className="select-plate">
+                        <ul className='select-plate__list'>
+                            {items.map((obj, index) => {
+                                return (
+                                    <li
+                                        key={`${obj.type}_${index}`}
+                                        className={activeItem === obj.type ? 'select-plate__list-item active' : 'select-plate__list-item'}
+                                        onClick={() => onSelectItem(obj.type)}
+                                    >{obj.name}</li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                )}
+            </div>
+        </>
     )
 })
 

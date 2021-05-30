@@ -1,3 +1,5 @@
+export {default as HeaderUsers} from './Header/Header'
+export {default as FooterUsers} from './Footer/Footer'
 export {default as FilterUsers} from './Filter/Filter'
 export {default as FormUsers} from './Form/Form'
 export {default as ListUsers} from './List/List'

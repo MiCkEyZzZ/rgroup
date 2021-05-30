@@ -7,7 +7,6 @@ export interface UsersState {
     query: string,
     sortByGender: string
     sortByStatus: string
-    dataLimit: number
     pageLimit: number
 }
 

@@ -8,6 +8,7 @@ export const fetchUsersList = (page: number, query: string, sortByGender: string
         dispatch({type: UsersActionTypes.FETCH_INFO})
         const response = await fetch(`${URL}${PAGE_PATH}${page}${NAME_PATH}${query}${sortByGender !== null ? `${GENDER_PATH}${sortByGender}` : ``}${sortByStatus !== null ? `${STATUS_PATH}${sortByStatus}` : ``}`, {method: `GET`})
             .then(response => response.json())
+        if (response.ok) return response.json()
         setTimeout(() => {
             dispatch({type: UsersActionTypes.FETCH_USERS_SUCCESS, payload: response.results})
             dispatch({type: UsersActionTypes.FETCH_INFO_SUCCESS, payload: response.info})
@@ -15,7 +16,7 @@ export const fetchUsersList = (page: number, query: string, sortByGender: string
     } catch (err) {
         dispatch({
             type: UsersActionTypes.FETCH_USERS_ERROR,
-            payload: 'Произошла ошибка при загрузке пользователей.'
+            payload: 'There is nothing here.'
         })
     }
 }
