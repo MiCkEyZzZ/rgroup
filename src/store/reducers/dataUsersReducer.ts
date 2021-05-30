@@ -5,7 +5,6 @@ const initialState = {
     favorites: [],
     info: {},
     page: 1,
-    dataLimit: 10,
     pageLimit: 5,
     loading: false,
     error: null,
