@@ -1,29 +1,35 @@
+@import "src/style/variables";
+@import "src/style/mixins";
+
 .list {
     width: 100%;
-    margin: 0 0 1rem 0;
-    padding: 0;
-    background-color: rgb(36, 40, 47);
+    @include margin(0, 0, 1rem, 0);
+    @include padding(0, 0, 0, 0);
+    background-color: $backgroundList;
 
     &-table {
         display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
         flex-wrap: wrap;
         width: 100%;
-        margin: 0;
-        padding: 0;
+        @include margin(0, 0, 0, 0);
+        @include padding(0, 0, 0, 0);
 
         &-item {
             width: 100%;
-            margin: 0.75rem auto;
-            background-color: rgb(60, 62, 68);
-            border-radius: 0.5rem;
-            box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+            @include margin(0.75rem, auto, 0.75rem, auto);
+            background-color: $backgroundItemList;
+            border-radius: $borderRadiusItemList;
+            box-shadow: $boxShadowItemList;
             overflow: hidden;
 
             &__info {
                 width: 100%;
                 align-items: center;
-                margin: 0;
-                padding: 0;
+                @include margin(0, 0, 0, 0);
+                @include padding(0, 0, 0, 0);
 
                 &-list {
                     display: flex;
@@ -31,8 +37,8 @@
                     height: initial;
                     width: 100%;
                     list-style: none;
-                    margin: 0;
-                    padding: 0;
+                    @include margin(0, 0, 0, 0);
+                    @include padding(0, 0, 0, 0);
                 }
 
                 &-item {
@@ -40,8 +46,8 @@
                     flex-direction: column;
                     flex: 2 1 0;
                     width: 100%;
-                    margin: 0;
-                    padding: 0;
+                    @include margin(0, 0, 0, 0);
+                    @include padding(0, 0, 0, 0);
                     overflow: hidden;
                 }
 
@@ -49,37 +55,40 @@
                     display: flex;
                     width: 100%;
                     align-items: center;
-                    margin: 0;
-                    padding: 0;
+                    @include margin(0, 0, 0, 0);
+                    @include padding(0, 0, 0, 0);
 
                     &--image {
                         width: 100%;
                         height: 300px;
-                        margin: 0;
-                        padding: 0;
+                        @include margin(0, 0, 0, 0);
+                        @include padding(0, 0, 0, 0);
+                        transition: opacity 0.5s ease 0s;
+                        object-position: center center;
+                        object-fit: cover;
+                        opacity: 1;
                     }
                 }
             }
 
             &__user {
-                margin: 0;
-                padding: 0.75rem;
+                @include margin(0, 0, 0, 0);
+                @include padding(0.75rem, 0.75rem, 0.75rem, 0.75rem);
 
                 &-title {
                     display: flex;
                     flex-direction: column;
                     width: 100%;
-                    margin: 0;
-                    padding: 0;
-
+                    @include margin(0, 0, 0, 0);
+                    @include padding(0, 0, 0, 0);
 
                     &--text {
-                        font-size: 1.5rem;
-                        line-height: 1.1;
+                        @include font-size(1.5);
                         font-weight: 800;
-                        margin: 0;
-                        padding: 0;
-                        color: #ffffff;
+                        line-height: 1.1;
+                        @include margin(0, 0, 0, 0);
+                        @include padding(0, 0, 0, 0);
+                        color: $fontColorItemTextUserList;
                     }
                 }
 
@@ -87,35 +96,36 @@
                     display: flex;
                     align-items: center;
                     width: 343px;
-                    font-size: 16px;
+                    @include font-size(1);
                     font-weight: 500;
                     text-transform: capitalize;
-                    margin: 1px 0 0 0;
-                    padding: 0;
-                    color: #ffffff;
+                    @include margin(1px, 0, 0, 0);
+                    @include padding(0, 0, 0, 0);
+                    color: $fontColorItemStatusUserList;
 
                     &--icon {
-                        height: 0.5rem;
                         width: 0.5rem;
-                        margin-right: 0.375rem;
-                        border-radius: 50%;
+                        height: 0.5rem;
+                        @include margin(0, 0.375rem, 0, 0);
+                        @include padding(0, 0, 0, 0);
+                        border-radius: $borderRadiusItemIconUserList;
                     }
 
                     &--text {
-                        margin: 0;
-                        padding: 0;
+                        @include margin(0, 0, 0, 0);
+                        @include padding(0, 0, 0, 0);
                     }
 
                     &--alive {
-                        background-color: rgb(85, 204, 68);
+                        background-color: $backgroundItemsAliveList;
                     }
 
                     &--dead {
-                        background-color: rgb(214, 61, 46);
+                        background-color: $backgroundItemsDeadList;
                     }
 
                     &--unknown {
-                        background-color: rgb(158, 158, 158);
+                        background-color: $backgroundItemsUnknownList;
                     }
                 }
 
@@ -124,16 +134,17 @@
                     flex-direction: column;
                     width: 100%;
                     height: 50px;
-                    margin: 5px 0 0 0;
-                    padding: 0;
-                    color: rgb(245, 245, 245);
+                    @include margin(5px, 0, 0, 0);
+                    @include padding(0, 0, 0, 0);
+                    color: $fontColorItemLocUserList;
 
                     &--title {
-                        font-size: 16px;
+                        @include font-size(1);
                         font-weight: 500;
-                        margin: 0;
-                        padding: 0;
-                        color: rgb(158, 158, 158);
+                        @include margin(0, 0, 0, 0);
+                        @include padding(0, 0, 0, 0);
+                        color: $fontColorItemLocTitleUserList;
+                        background-color: #3c3e44;
                     }
                 }
 
@@ -142,182 +153,60 @@
                     flex-direction: row;
                     justify-content: center;
                     align-items: center;
-                    margin: 10px 0 0 0;
-                    padding: 0;
+                    @include margin(10px, 0, 0, 0);
+                    @include padding(0, 0, 0, 0);
                 }
             }
         }
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $table-width) {
     .list {
-        width: 100%;
-        margin: 0 0 1rem 0;
-        padding: 0;
-        background-color: rgb(36, 40, 47);
-
         &-table {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-
             &-item {
                 display: flex;
-                width: 100%;
                 max-width: 600px;
                 height: 220px;
-                margin: 0.75rem auto;
-                background-color: rgb(60, 62, 68);
-                border-radius: 0.5rem;
-                box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
-                overflow: hidden;
 
                 &:nth-child(19) {
-                    margin: .75rem auto .75rem auto;
+                    @include margin(.75rem, auto, .75rem, auto);
                 }
 
                 &:last-child {
-                    margin: .75rem auto 0 auto;
+                    @include margin(.75rem, auto, 0, auto);
                 }
 
                 &__info {
-                    width: 100%;
-                    align-items: center;
-                    margin: 0;
-                    padding: 0;
-
                     &-list {
-                        display: flex;
                         flex-direction: row;
-                        width: 100%;
-                        list-style: none;
-                        margin: 0;
-                        padding: 0;
                     }
 
                     &-item {
-                        display: flex;
-                        flex-direction: column;
-                        flex: 2 1 0;
-                        width: 100%;
-                        margin: 0;
-                        padding: 0;
-                        border-top-left-radius: .5rem;
-                        border-bottom-left-radius: .5rem;
-                        overflow: hidden;
-
                         &:last-child {
                             flex: 3 1 0;
-                            padding: 0.75rem;
+                            @include padding(0.75rem, 0.75rem, 0.75rem, 0.75rem);
                             border-top-left-radius: 0;
                             border-bottom-left-radius: 0;
                         }
                     }
 
                     &-avatar {
-                        display: flex;
                         width: 230px;
-                        align-items: center;
                         text-align: left;
-                        margin: 0;
-                        padding: 0;
 
                         &--image {
-                            width: 100%;
                             height: 220px;
-                            margin: 0;
-                            padding: 0;
                             border-bottom-left-radius: .5rem;
                         }
                     }
                 }
 
                 &__user {
-                    margin: 0;
-                    padding: 0;
-
-                    &-title {
-                        display: flex;
-                        flex-direction: column;
-                        width: 100%;
-                        margin: 0;
-                        padding: 0;
-
-
-                        &--text {
-                            font-size: 1.5rem;
-                            line-height: 1.1;
-                            font-weight: 800;
-                            margin: 0;
-                            padding: 0;
-                            color: #ffffff;
-                        }
-                    }
-
-                    &-status {
-                        display: flex;
-                        align-items: center;
-                        width: 343px;
-                        font-size: 16px;
-                        font-weight: 500;
-                        text-transform: capitalize;
-                        margin: 1px 0 0 0;
-                        padding: 0;
-                        color: #ffffff;
-
-                        &--icon {
-                            height: 0.5rem;
-                            width: 0.5rem;
-                            margin-right: 0.375rem;
-                            border-radius: 50%;
-                        }
-
-                        &--text {
-                            margin: 0;
-                            padding: 0;
-                        }
-
-                        &--alive {
-                            background-color: rgb(85, 204, 68);
-                        }
-
-                        &--dead {
-                            background-color: rgb(214, 61, 46);
-                        }
-
-                        &--unknown {
-                            background-color: rgb(158, 158, 158);
-                        }
-                    }
-
-                    &-loc {
-                        display: flex;
-                        flex-direction: column;
-                        width: 100%;
-                        height: 50px;
-                        margin: 5px 0 0 0;
-                        padding: 0;
-                        color: rgb(245, 245, 245);
-
-                        &--title {
-                            font-size: 16px;
-                            font-weight: 500;
-                            margin: 0;
-                            padding: 0;
-                            color: rgb(158, 158, 158);
-                        }
-                    }
+                    @include padding(0, 0, 0, 0);
 
                     &-btn {
-                        display: flex;
-                        flex-direction: row;
                         justify-content: unset;
-                        align-items: center;
-                        margin: 10px 0 0 0;
-                        padding: 0;
                     }
                 }
             }
@@ -325,176 +214,23 @@
     }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: $desktop-width) {
     .list {
-        width: 100%;
         max-width: 1875px;
-        margin: 0 0 1rem 0;
-        padding: 0;
-        background-color: rgb(36, 40, 47);
 
         &-table {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
             max-width: 1920px;
-            margin: 0;
-            padding: 0;
 
             &-item {
-                display: flex;
-                width: 100%;
-                max-width: 600px;
-                height: 220px;
-                margin: 0.75rem auto;
-                background-color: rgb(60, 62, 68);
-                border-radius: 0.5rem;
-                box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
-                overflow: hidden;
+                width: 600px;
+                @include margin(.75rem, .75rem, .75rem, .75rem);
 
                 &:nth-child(19) {
-                    margin: .75rem .75rem 0 .75rem;
+                    @include margin(.75rem, .75rem, 0, .75rem);
                 }
 
                 &:last-child {
-                    margin: .75rem auto 0 1rem;
-                }
-
-                &__info {
-                    width: 100%;
-                    align-items: center;
-                    margin: 0;
-                    padding: 0;
-
-                    &-list {
-                        display: flex;
-                        flex-direction: row;
-                        width: 100%;
-                        list-style: none;
-                        margin: 0;
-                        padding: 0;
-                    }
-
-                    &-item {
-                        display: flex;
-                        flex-direction: column;
-                        flex: 2 1 0;
-                        width: 100%;
-                        margin: 0;
-                        padding: 0;
-                        border-top-left-radius: .5rem;
-                        border-bottom-left-radius: .5rem;
-                        overflow: hidden;
-
-                        &:last-child {
-                            flex: 3 1 0;
-                            padding: 0.75rem;
-                            border-top-left-radius: 0;
-                            border-bottom-left-radius: 0;
-                        }
-                    }
-
-                    &-avatar {
-                        display: flex;
-                        width: 230px;
-                        align-items: center;
-                        text-align: left;
-                        margin: 0;
-                        padding: 0;
-
-                        &--image {
-                            width: 100%;
-                            height: 220px;
-                            margin: 0;
-                            padding: 0;
-                            border-bottom-left-radius: .5rem;
-                        }
-                    }
-                }
-
-                &__user {
-                    margin: 0;
-                    padding: 0;
-
-                    &-title {
-                        display: flex;
-                        flex-direction: column;
-                        width: 100%;
-                        margin: 0;
-                        padding: 0;
-
-
-                        &--text {
-                            font-size: 1.5rem;
-                            line-height: 1.1;
-                            font-weight: 800;
-                            margin: 0;
-                            padding: 0;
-                            color: #ffffff;
-                        }
-                    }
-
-                    &-status {
-                        display: flex;
-                        align-items: center;
-                        width: 343px;
-                        font-size: 16px;
-                        font-weight: 500;
-                        text-transform: capitalize;
-                        margin: 1px 0 0 0;
-                        padding: 0;
-                        color: #ffffff;
-
-                        &--icon {
-                            height: 0.5rem;
-                            width: 0.5rem;
-                            margin-right: 0.375rem;
-                            border-radius: 50%;
-                        }
-
-                        &--text {
-                            margin: 0;
-                            padding: 0;
-                        }
-
-                        &--alive {
-                            background-color: rgb(85, 204, 68);
-                        }
-
-                        &--dead {
-                            background-color: rgb(214, 61, 46);
-                        }
-
-                        &--unknown {
-                            background-color: rgb(158, 158, 158);
-                        }
-                    }
-
-                    &-loc {
-                        display: flex;
-                        flex-direction: column;
-                        width: 100%;
-                        height: 50px;
-                        margin: 5px 0 0 0;
-                        padding: 0;
-                        color: rgb(245, 245, 245);
-
-                        &--title {
-                            font-size: 16px;
-                            font-weight: 500;
-                            margin: 0;
-                            padding: 0;
-                            color: rgb(158, 158, 158);
-                        }
-                    }
-
-                    &-btn {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        margin: 10px 0 0 0;
-                        padding: 0;
-                    }
+                    @include margin(.75rem, auto, 0, 1rem);
                 }
             }
         }

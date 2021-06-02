@@ -1,0 +1,101 @@
+@import "src/style/variables";
+@import "src/style/mixins";
+
+.pagination {
+    @include margin(0, 0, 1rem, 0);
+    @include padding(1rem, 1rem, 1rem, 1rem);
+    background-color: $backgroundPagination;
+
+    &-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        @include margin(0, 0, 0, 0);
+        @include padding(0, 0, 0, 0);
+    }
+
+    &-list {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        @include margin(0, 0, 0, 0);
+        @include padding(0, 0, 0, 0);
+
+        &__item {
+            @include margin(0, 5px, 0, 0);
+            @include padding(0, 0, 0, 0);
+            transition: all 0.22s;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &:hover .pagination-list__item-link {
+                color: $fontColorHoverPagination;
+                background-color: $backgroundHoverPagination;
+                cursor: pointer;
+                transition: all 0.22s;
+            }
+
+            &-link {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                align-items: center;
+                @include margin(0, 0, 0, 0);
+                @include padding(5px, 10px, 5px, 10px);
+                color: $fontColorLinkPagination;
+                background-color: $backgroundLinkPagination;
+                border: 1px solid $borderColorLinkPagination;
+                border-radius: $borderRadiusLinkPagination;
+                transition: all 0.22s;
+                box-shadow: $boxShadowLinkPagination;
+
+                &.active {
+                    color: $fontColorLinkPaginationActive;
+                    background-color: $backgroundLinkPaginationActive;
+
+                    &:hover {
+                        color: $fontColorLinkPaginationHover;
+                        background-color: $backgroundLinkPaginationHover;
+                    }
+                }
+            }
+
+            &-prev,
+            &-next {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                align-items: center;
+                @include margin(0, 0, 0, 0);
+                @include padding(5px, 10px, 5px, 10px);
+                color: $fontColorLinkPagination;
+                background-color: $backgroundLinkPagination;
+                border: 1px solid $borderColorLinkPagination;
+                border-radius: $borderRadiusLinkPagination;
+                transition: all 0.22s;
+                box-shadow: $boxShadowLinkPagination;
+
+                &:hover {
+                    color: $fontColorHoverPagination;
+                    background-color: $backgroundHoverPagination;
+                    border: 1px solid $borderColorHoverPagination;
+                    cursor: pointer;
+                    transition: all 0.22s;
+                }
+
+                &.disabled,
+                &.disabled {
+                    color: $fontColorDisabledPagination;
+                    background-color: $backgroundDisabledPagination;
+                    border: 1px solid $borderColorDisabledPagination;
+                    pointer-events: none;
+                    opacity: .2;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

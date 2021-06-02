@@ -48,7 +48,15 @@ const SelectUser: React.FC<ISelectProps> = memo((props) => {
                     <div
                         className={visible ? "select-label__text active" : "select-label__text"}
                         onClick={onOpenSort}
-                    >{activeLabel}</div>
+                    >
+                        {activeLabel}
+                        <span className="select-label__text-icon">
+                            {visible
+                                ? <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 213.333 213.333"><path d="M106.667 53.333L0 160h213.333z"/></svg>
+                                : <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 213.333 213.333"><path d="M0 53.333L106.667 160 213.333 53.333z"/></svg>
+                            }
+                        </span>
+                    </div>
                 </div>
 
                 {visible && (

@@ -1,3 +1,6 @@
+@import "src/style/variables";
+@import "src/style/mixins";
+
 .footer {
   position: relative;
   display: flex;
@@ -8,39 +11,71 @@
   width: 100%;
   min-height: calc(120px);
   align-items: center;
-  padding: 4.5rem 0;
-  color: rgb(158, 158, 158);
-  background: rgb(32, 35, 41);
+  @include margin(0, 0, 0, 0);
+  @include padding(4.5rem, 0, 4.5rem, 0);
+  color: $fontColorFooter;
+  background-color: $backgroundFooter;
 
   &-context {
     display: flex;
     flex-direction: row;
     width: auto;
-    align-items: center;
     height: 29px;
-    margin: 0;
-    padding: 0;
+    @include font-size(.75);
+    align-items: center;
+    @include margin(0, 0, 0, 0);
+    @include padding(0, 0, 0, 0);
 
     &-link {
+      @include font-size(.75);
       font-weight: bold;
+      @include margin(0, 0, 0, 5px);
+      @include padding(0, 0, 0, 0);
+      color: $fontColorFooterLink;
+      border-bottom: 1px solid $borderColorFooterLink;
       transition: color 0.2s ease 0s;
-      margin: 0 0 0 5px;
-      padding: 0;
-      color: rgb(245, 245, 245);
-      border-bottom: 1px solid rgb(255, 152, 0);
 
-      &:hover {
-        color: rgb(255, 152, 0);
+      &:active {
+        color: $fontColorFooterLinkActive;
         border-bottom: 1px solid transparent;
       }
     }
 
     &-text {
-      margin: 0 10px 0 0;
-      padding: 0;
+      @include margin(0, 10px, 0, 0);
+      @include padding(0, 0, 0, 0);
 
       &:last-child {
-        margin: 0;
+        @include margin(0, 0, 0, 0);
+      }
+    }
+  }
+}
+
+@media (min-width: $table-width) {
+  .footer {
+    &-context {
+      @include font-size(.95);
+
+      &-link {
+        @include font-size(.95);
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .footer {
+    &-context {
+      @include font-size(1);
+
+      &-link {
+        @include font-size(1);
+
+        &:hover {
+          color: $fontColorFooterLinkHover;
+          border-bottom: 1px solid transparent;
+        }
       }
     }
   }

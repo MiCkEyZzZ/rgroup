@@ -1,10 +1,10 @@
-import React, {memo, useCallback, useState} from 'react'
+import React, { memo, useCallback, useState } from 'react'
 
 import './Filter.scss'
 
-import {SelectUsers} from "../index"
-import {genders, statuses} from '../../mock'
-import {useActions} from '../../hooks/useActions'
+import { SelectCharacters } from "../index"
+import { genders, statuses } from '../../mock'
+import { useActions } from '../../hooks/useActions'
 
 interface IFilterProps {
     sortByGender: string
@@ -12,7 +12,7 @@ interface IFilterProps {
 }
 
 const Filter:React.FC<IFilterProps> = memo(({sortByGender, sortByStatus}) => {
-    const {setSortUsersByGender, setSortUsersByStatus} = useActions()
+    const { setSortCharactersByGender, setSortCharactersByStatus } = useActions()
     const [genderPlate, setGenderPlate] = useState(false)
     const [statusPlate, setStatusPlate] = useState(false)
 
@@ -25,19 +25,19 @@ const Filter:React.FC<IFilterProps> = memo(({sortByGender, sortByStatus}) => {
     }
 
     const handleSelectGender = useCallback(type => {
-        setSortUsersByGender(type)
-    }, [setSortUsersByGender])
+        setSortCharactersByGender(type)
+    }, [setSortCharactersByGender])
 
     const handleSelectStatuses = useCallback(type => {
-        setSortUsersByStatus(type)
-    }, [setSortUsersByStatus])
+        setSortCharactersByStatus(type)
+    }, [setSortCharactersByStatus])
 
     return (
         <>
             <div className="filter">
-                <SelectUsers
+                <SelectCharacters
                     activeItem={sortByGender}
-                    label='GENDER'
+                    label='Gender'
                     items={genders}
                     visible={genderPlate}
                     setVisible={setGenderPlate}
@@ -45,9 +45,9 @@ const Filter:React.FC<IFilterProps> = memo(({sortByGender, sortByStatus}) => {
                     onClickItemType={handleSelectGender}
                 />
 
-                <SelectUsers
+                <SelectCharacters
                     activeItem={sortByStatus}
-                    label='STATUS'
+                    label='Status'
                     items={statuses}
                     visible={statusPlate}
                     setVisible={setStatusPlate}

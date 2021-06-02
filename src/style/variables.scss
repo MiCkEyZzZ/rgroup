@@ -1,0 +1,116 @@
+/* Base style */
+$font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+$font-size: 16px;
+$fonts-color: #2c3e50;
+$background-main: rgb(36, 40, 47);
+$top: 0;
+$right: 0;
+$bottom: 0;
+$left: 0;
+
+/* Characters style */
+$fontColorHeaderUsers: #24282f;
+$backgroundHeaderUsers: #ffffff;
+$fontWeightHeaderTitle: 900;
+$fontColorHeaderTitle: rgb(32, 35, 41);
+
+/* Character style */
+$backgroundUserCard: rgb(36, 40, 47);
+$borderRadiusUserCard: 10px;
+$boxShadowUserCard: 2px 3px 10px rgba(0, 0, 0, 0.2);
+$backgroundUserAvatar: rgb(60, 62, 68);
+$backgroundUserInfo: rgb(60, 62, 68);
+$borderColorUserInfo: rgb(60, 62, 68);
+$fontColorUserInfoTitle: #ffffff;
+$borderColorUserInfoItem: #ffffff;
+$fontColorUserInfoLabel: #ffffff;
+$fontColorUserInfoText: rgb(255, 152, 0);
+
+/* Header style */
+$backgroundHeader: #ffffff;
+
+/* Form style */
+$colorInputForm: #ffffff;
+$backgroundInputForm: rgb(36, 40, 47);
+$borderColorInputForm: rgb(158, 158, 158);
+$borderRadiusInputForm: 3px;
+$borderColorFocusInputForm: rgb(255, 152, 0);
+$backgroundForm: rgb(36, 40, 47);
+
+/* Filter style */
+$fontColorFilter: #202329;
+$backgroundFilter: rgb(36, 40, 47);
+
+/* List style */
+$backgroundList: rgb(36, 40, 47);
+$backgroundItemList: rgb(60, 62, 68);
+$borderRadiusItemList: 0.5rem;
+$boxShadowItemList: 2px 3px 10px rgba(0, 0, 0, 0.2);
+$fontColorItemTextUserList: #ffffff;
+$fontColorItemStatusUserList: #ffffff;
+$borderRadiusItemIconUserList: 50%;
+$fontColorItemLocUserList: rgb(245, 245, 245);
+$fontColorItemLocTitleUserList: rgb(158, 158, 158);
+$backgroundItemsAliveList: rgb(85, 204, 68);
+$backgroundItemsDeadList: rgb(214, 61, 46);
+$backgroundItemsUnknownList: rgb(158, 158, 158);
+
+/* Pagination style */
+$fontColorLinkPagination: #ffffff;
+$backgroundLinkPagination: rgb(60, 62, 68);
+$borderColorLinkPagination: #24282f;
+$borderRadiusLinkPagination: .25rem;
+$boxShadowLinkPagination: 2px 3px 10px rgba(0, 0, 0, 0.2);
+$fontColorLinkPaginationActive: rgb(255, 152, 0);
+$backgroundLinkPaginationActive: rgb(60, 62, 68);
+$fontColorLinkPaginationHover: rgb(255, 152, 0);
+$backgroundLinkPaginationHover: rgb(60, 62, 68);
+$fontColorHoverPagination: #ffffff;
+$backgroundHoverPagination: rgba(60, 62, 68, .4);
+$borderColorHoverPagination: rgba(60, 62, 68, .4);
+$backgroundPagination: rgb(36, 40, 47);
+$fontColorDisabledPagination: #ffffff;
+$backgroundDisabledPagination: rgb(60, 62, 68);
+$borderColorDisabledPagination: rgb(60, 62, 68);
+
+/* Footer style */
+$fontColorFooter: rgb(158, 158, 158);
+$backgroundFooter: rgb(32, 35, 41);
+$fontColorFooterLink: rgb(245, 245, 245);
+$fontColorFooterLinkActive: rgb(255, 152, 0);
+$fontColorFooterLinkHover: rgb(255, 152, 0);
+$borderColorFooterLink: rgb(255, 152, 0);
+
+/* Button style */
+$fontColorButton: #ffffff;
+$backgroundButton: #24282f;
+$borderColorButton: rgb(60, 62, 68);
+$borderRadiusButton: 5px;
+
+/* LinkButton style */
+$fontColorLink: #ffffff;
+$backgroundLink: #24282f;
+$borderColorLink: rgb(60, 62, 68);
+$borderRadiusLink: 5px;
+
+/* Select style */
+$fontColorTitleSelect: rgb(158, 158, 158);
+$fontColorTextSelect: #ffffff;
+$borderColorTextSelect: rgb(158, 158, 158);
+$borderColorTextActiveSelect: rgb(255, 152, 0);
+$borderRadiusTextSelect: .2rem;
+$backgroundPlateSelect: rgb(60, 62, 68);
+$borderRadiusPlateSelect: .2rem;
+$boxShadowPlateSelect: 0 3px 9px rgba(0, 0, 0, .6);
+$fontColorItemPlateSelect: #ffffff;
+$fontColorItemHoverPlateSelect: #ffffff;
+$fontColorItemActivePlateSelect: rgb(255, 152, 0);
+$backgroundItemHoverPlateSelect: rgb(36, 40, 47);
+$backgroundItemActivePlateSelect: rgb(36, 40, 47);
+
+/* Resolution display */
+$mobile-width-only: 767px;
+$table-width: 768px;
+$desktop-width: 1200px;
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

@@ -1,5 +1,5 @@
-export interface UsersState {
-    users: any[]
+export interface CharactersState {
+    characters: any[]
     info: any
     loading: boolean
     error: null | string
@@ -10,102 +10,102 @@ export interface UsersState {
     pageLimit: number
 }
 
-export enum UsersActionTypes {
-    FETCH_USERS = 'USERS/FETCH_USERS',
-    FETCH_USERS_SUCCESS = 'USERS/FETCH_USERS_SUCCESS',
-    FETCH_USERS_ERROR = 'USERS/FETCH_USERS_ERROR',
-    FETCH_INFO = 'USERS/FETCH_INFO',
-    FETCH_INFO_SUCCESS = 'USERS/FETCH_INFO_SUCCESS',
-    FETCH_INFO_ERROR = 'USERS/FETCH_INFO_ERROR',
-    FETCH_USERS_PAGE = 'USERS/FETCH_USERS_PAGE',
-    FETCH_USERS_QUERY = 'USERS/FETCH_USERS_QUERY',
-    FETCH_SORT_BY_GENDER = 'USERS/SET_SORT_BY_GENDER',
-    FETCH_SORT_BY_STATUS = 'USERS/FETCH_SORT_BY_STATUS'
+export enum CharactersActionTypes {
+    FETCH_CHARACTERS = 'CHARACTERS/FETCH_CHARACTERS',
+    FETCH_CHARACTERS_SUCCESS = 'CHARACTERS/FETCH_CHARACTERS_SUCCESS',
+    FETCH_CHARACTERS_ERROR = 'CHARACTERS/FETCH_CHARACTERS_ERROR',
+    FETCH_CHARACTERS_PAGE = 'CHARACTERS/FETCH_CHARACTERS_PAGE',
+    FETCH_CHARACTERS_QUERY = 'CHARACTERS/FETCH_CHARACTERS_QUERY',
+    FETCH_INFO = 'CHARACTERS/FETCH_INFO',
+    FETCH_INFO_SUCCESS = 'CHARACTERS/FETCH_INFO_SUCCESS',
+    FETCH_INFO_ERROR = 'CHARACTERS/FETCH_INFO_ERROR',
+    FETCH_SORT_BY_GENDER = 'CHARACTERS/SET_SORT_BY_GENDER',
+    FETCH_SORT_BY_STATUS = 'CHARACTERS/FETCH_SORT_BY_STATUS'
 }
 
-export interface FetchUsersAction {
-    type: UsersActionTypes.FETCH_USERS
+export interface FetchCharactersAction {
+    type: CharactersActionTypes.FETCH_CHARACTERS
 }
 
-export interface FetchUsersSuccessAction {
-    type: UsersActionTypes.FETCH_USERS_SUCCESS
+export interface FetchCharactersSuccessAction {
+    type: CharactersActionTypes.FETCH_CHARACTERS_SUCCESS
     payload: any[]
 }
 
-export interface FetchUsersErrorAction {
-    type: UsersActionTypes.FETCH_USERS_ERROR
+export interface FetchCharactersErrorAction {
+    type: CharactersActionTypes.FETCH_CHARACTERS_ERROR
     payload: string
 }
 
 export interface FetchInfoAction {
-    type: UsersActionTypes.FETCH_INFO
+    type: CharactersActionTypes.FETCH_INFO
 }
 
 export interface FetchInfoSuccessAction {
-    type: UsersActionTypes.FETCH_INFO_SUCCESS
+    type: CharactersActionTypes.FETCH_INFO_SUCCESS
     payload: {}
 }
 
 export interface FetchInfoErrorAction {
-    type: UsersActionTypes.FETCH_INFO_ERROR
+    type: CharactersActionTypes.FETCH_INFO_ERROR
     payload: string
 }
 
-export interface SetUsersPage {
-    type: UsersActionTypes.FETCH_USERS_PAGE
+export interface SetCharactersPage {
+    type: CharactersActionTypes.FETCH_CHARACTERS_PAGE
     payload: number
 }
 
-export interface SetUsersQuery {
-    type: UsersActionTypes.FETCH_USERS_QUERY
+export interface SetCharactersQuery {
+    type: CharactersActionTypes.FETCH_CHARACTERS_QUERY
     payload: string
 }
 
-export interface SetUsersSortByGender {
-    type: UsersActionTypes.FETCH_SORT_BY_GENDER
+export interface SetCharactersSortByGender {
+    type: CharactersActionTypes.FETCH_SORT_BY_GENDER
     payload: string
 }
 
-export interface SetUsersSortByStatus {
-    type: UsersActionTypes.FETCH_SORT_BY_STATUS
+export interface SetCharactersSortByStatus {
+    type: CharactersActionTypes.FETCH_SORT_BY_STATUS
     payload: string
 }
 
-export type UsersAction = FetchUsersAction |
-                          FetchUsersSuccessAction |
-                          FetchUsersErrorAction |
+export type CharactersAction = FetchCharactersAction |
+                          FetchCharactersSuccessAction |
+                          FetchCharactersErrorAction |
                           FetchInfoAction |
                           FetchInfoSuccessAction |
                           FetchInfoErrorAction |
-                          SetUsersPage |
-                          SetUsersQuery |
-                          SetUsersSortByGender |
-                          SetUsersSortByStatus
+                          SetCharactersPage |
+                          SetCharactersQuery |
+                          SetCharactersSortByGender |
+                          SetCharactersSortByStatus
 
-export interface UserState {
-    user: any
+export interface CharacterState {
+    character: any
     loading: boolean
     error: null | string
 }
 
-export enum UserActionTypes {
-    FETCH_USER = 'FETCH_USER',
-    FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS',
-    FETCH_USER_ERROR = 'FETCH_USER_ERROR'
+export enum CharacterActionTypes {
+    FETCH_CHARACTER = 'CHARACTER/FETCH_CHARACTER',
+    FETCH_CHARACTER_SUCCESS = 'CHARACTER/FETCH_CHARACTER_SUCCESS',
+    FETCH_CHARACTER_ERROR = 'CHARACTER/FETCH_CHARACTER_ERROR'
 }
 
-export interface FetchUserAction {
-    type: UserActionTypes.FETCH_USER
+export interface FetchCharacterAction {
+    type: CharacterActionTypes.FETCH_CHARACTER
 }
 
-export interface FetchUserSuccessAction {
-    type: UserActionTypes.FETCH_USER_SUCCESS
+export interface FetchCharacterSuccessAction {
+    type: CharacterActionTypes.FETCH_CHARACTER_SUCCESS
     payload: {}
 }
 
-export interface FetchUserErrorAction {
-    type: UserActionTypes.FETCH_USER_ERROR
+export interface FetchCharacterErrorAction {
+    type: CharacterActionTypes.FETCH_CHARACTER_ERROR
     payload: string
 }
 
-export type UserAction = FetchUserAction | FetchUserSuccessAction | FetchUserErrorAction
+export type CharacterAction = FetchCharacterAction | FetchCharacterSuccessAction | FetchCharacterErrorAction

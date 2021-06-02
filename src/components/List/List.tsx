@@ -1,13 +1,12 @@
 import React from 'react'
-import cn from 'classnames'
 
 import './List.scss'
 
-import {ButtonUsers, LinkUsers} from '../index'
+import { ButtonCharacters, LinkCharacters } from '../index'
 import { makeShortTitleText } from '../../utils/common'
 
 interface IListProps {
-    personages: {
+    characters: {
         id: number
         image: string
         name: string
@@ -19,10 +18,8 @@ interface IListProps {
     error: null | string
 }
 
-const List: React.FC<IListProps> = ({personages, error}) => {
+const List: React.FC<IListProps> = ({characters, error}) => {
     const addUserFavorite = (id: number) => {}
-
-    const style = 'background'
 
     const statusColor = {
         alive: 'alive',
@@ -33,7 +30,7 @@ const List: React.FC<IListProps> = ({personages, error}) => {
     if (error) {
         return (
             <div className="list">
-                <p>There is nothing here.</p>
+                <p>There is nothing here</p>
             </div>
         )
     }
@@ -42,54 +39,52 @@ const List: React.FC<IListProps> = ({personages, error}) => {
         <>
             <div className="list">
                 <ul className="list-table">
-                    {personages.map((personage, index) => {
-                        return (
+                    {characters && characters.map((character, index) => (
                             <li
-                                key={`{${personage.id}_${index}`}
+                                key={`{${character.id}_${index}`}
                                 className="list-table-item"
                             >
                                 <div className="list-table-item__info">
                                     <ul className="list-table-item__info-list">
                                         <li className='list-table-item__info-item'>
                                             <div className='list-table-item__info-avatar'>
-                                                <img className='list-table-item__info-avatar--image' src={personage.image} alt={personage.name} />
+                                                <img className='list-table-item__info-avatar--image' src={character.image} alt={character.name} />
                                             </div>
                                         </li>
                                         <li className='list-table-item__info-item list-table-item__user'>
                                             <div className="list-table-item__user-title">
-                                                <h3 className='list-table-item__user-title--text'>{makeShortTitleText(personage.name)}</h3>
+                                                <h3 className='list-table-item__user-title--text'>{makeShortTitleText(character.name)}</h3>
                                                 <span className='list-table-item__user-status'>
                                                     <span className={`list-table-item__user-status--icon list-table-item__user-status--${statusColor.dead}`}></span>
-                                                    <p className='list-table-item__user-status--text'>{personage.status}  -  {personage.species}</p>
+                                                    <p className='list-table-item__user-status--text'>{character.status}  -  {character.species}</p>
                                                 </span>
                                             </div>
                                             <div className="list-table-item__user-loc">
                                                 <span className="list-table-item__user-loc--title">Last known location:</span>
-                                                {personage.location.name}
+                                                {character.location.name}
                                             </div>
                                             <div className="list-table-item__user-loc">
                                                 <span className="list-table-item__user-loc--title">Gender:</span>
-                                                {personage.gender}
+                                                {character.gender}
                                             </div>
                                             <div className='list-table-item__user-btn'>
-                                                <ButtonUsers
+                                                <ButtonCharacters
                                                     title='Add Favorite'
                                                     className='btn'
-                                                    onClickButton={() => addUserFavorite(personage.id)}
+                                                    onClickButton={() => addUserFavorite(character.id)}
                                                 />
-
-                                                    <LinkUsers
-                                                        title='Show more'
-                                                        className='link'
-                                                        link={`/personages/personage/${personage.id}`}
-                                                    />
+                                                <LinkCharacters
+                                                    title='Show more'
+                                                    className='link'
+                                                    link={`/personages/personage/${character.id}`}
+                                                />
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                        )
-                    })}
+                        ))
+                    }
                 </ul>
             </div>
         </>

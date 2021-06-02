@@ -1,232 +1,92 @@
+@import "src/style/variables";
+@import "src/style/mixins";
+
 .form {
     width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(36, 40, 47);
+    @include margin(0, 0, 0, 0);
+    @include padding(0, 0, 0, 0);
+    background-color: $backgroundForm;
 
     &-control {
         position: relative;
         display: flex;
         flex-direction: column;
-        margin: 0 0 0 0;
-        padding: 0;
+        @include margin(0, 0, 0, 0);
+        @include padding(0, 0, 0, 0);
 
         & input,
         & select,
         & textarea {
             display: block;
             width: 100%;
-            font-size: .9rem;
+            @include font-size(.9);
             font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0.7rem 1rem 0.7rem 1rem;
-            color: #ffffff;
-            background-color: rgb(36, 40, 47);
-            border: 1px solid rgb(158, 158, 158);
-            border-radius: 3px;
+            @include margin(0, 0, 0, 0);
+            @include padding(.7rem, 1rem, .7rem, 1rem);
+            color: $colorInputForm;
+            background-color: $backgroundInputForm;
+            border: 1px solid $borderColorInputForm;
+            border-radius: $borderRadiusInputForm;
             outline: none;
             resize: none;
         }
 
         & input::-webkit-input-placeholder {
-            font-size: .9rem;
-            color: #ffffff;
+            @include font-size(.9);
+            color: $colorInputForm;
         }
 
         & input:-moz-input-placeholder {
-            font-size: .9rem;
-            color: #ffffff;
+            @include font-size(.9);
+            color: $colorInputForm;
         }
 
         & input::-moz-input-placeholder {
-            font-size: .9rem;
-            color: #ffffff;
+            @include font-size(.9);
+            color: $colorInputForm;
         }
 
         & input:-ms-input-placeholder {
-            font-size: .9rem;
-            color: #ffffff;
-        }
-
-        & small {
-            color: #e53935;
-        }
-
-        &.invalid input {
-            border-color: #e53935;
+            @include font-size(.9);
+            color: $colorInputForm;
         }
 
         & label {
             display: block;
             font-weight: 500;
-            margin: 0 0 0.3rem 0.3rem;
+            @include margin(0, 0, .3rem, .3rem);
         }
 
         & input:active,
         & input:focus {
+            border: 1px solid $borderColorFocusInputForm;
             transition: border 0.22s;
-            border: 1px solid rgb(255, 152, 0);
         }
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $table-width) {
     .form {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: rgb(36, 40, 47);
-
         &-control {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            margin: 0 0 0 0;
-            padding: 0;
-
             & input,
             & select,
             & textarea {
-                display: block;
-                width: 100%;
-                font-size: .9rem;
-                font-family: 'Segoe UI', sans-serif;
-                margin: 0;
-                padding: 0.7rem 1rem 0.7rem 1rem;
-                color: #ffffff;
-                background-color: rgb(36, 40, 47);
-                border: 1px solid rgb(158, 158, 158);
-                border-radius: 3px;
-                outline: none;
-                resize: none;
-            }
-
-            & input::-webkit-input-placeholder {
-                font-size: .9rem;
-                color: #ffffff;
-            }
-
-            & input:-moz-input-placeholder {
-                font-size: .9rem;
-                color: #ffffff;
-            }
-
-            & input::-moz-input-placeholder {
-                font-size: .9rem;
-                color: #ffffff;
-            }
-
-            & input:-ms-input-placeholder {
-                font-size: .9rem;
-                color: #ffffff;
-            }
-
-            & small {
-                color: #e53935;
-            }
-
-            &.invalid input {
-                border-color: #e53935;
-            }
-
-            & label {
-                display: block;
-                font-weight: 500;
-                margin: 0 0 0.3rem 0.3rem;
-            }
-
-            & input:active,
-            & input:focus {
-                transition: border 0.22s;
-                border: 1px solid rgb(255, 152, 0);
+                max-width: 602px;
+                @include margin(0, auto, 0, auto);
             }
         }
     }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: $desktop-width) {
     .form {
-        width: 100%;
-        margin: 0 1.5rem 0 0;
-        padding: 0;
-        background-color: rgb(36, 40, 47);
+        @include margin(0, 1.5rem, 0, 0);
 
         &-control {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            margin: 0 0 0 0;
-            padding: 0;
-
             & input,
             & select,
             & textarea {
-                display: block;
                 width: 300px;
-                font-size: .9rem;
-                font-family: 'Segoe UI', sans-serif;
-                margin: 0;
-                padding: 0.7rem 1rem 0.7rem 1rem;
-                color: #ffffff;
-                background-color: rgb(36, 40, 47);
-                border: 1px solid rgb(158, 158, 158);
-                border-radius: 3px;
-                outline: none;
-                resize: none;
-            }
-
-            & input::-webkit-input-placeholder {
-                font-size: .9rem;
-                color: #ffffff;
-            }
-
-            & input:-moz-input-placeholder {
-                font-size: .9rem;
-                color: #ffffff;
-            }
-
-            & input::-moz-input-placeholder {
-                font-size: .9rem;
-                color: #ffffff;
-            }
-
-            & input:-ms-input-placeholder {
-                font-size: .9rem;
-                color: #ffffff;
-            }
-
-            & small {
-                color: #e53935;
-            }
-
-            &.invalid input {
-                border-color: #e53935;
-            }
-
-            & label {
-                display: block;
-                font-weight: 500;
-                margin: 0 0 0.3rem 0.3rem;
-            }
-
-            & input:active,
-            & input:focus {
-                transition: border 0.22s;
-                border: 1px solid rgb(255, 152, 0);
-            }
-        }
-
-        &-checkbox {
-            margin-bottom: 1rem;
-
-            &.label {
-                display: block;
-                font-weight: 500;
-                margin: 0 0 0.3rem 0.3rem;
-            }
-
-            &.checkbox input {
-                margin-right: 1rem;
             }
         }
     }

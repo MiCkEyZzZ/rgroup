@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
+import reportWebVitals from './reportWebVitals'
 
 import './index.scss'
 import './App.scss'
@@ -17,3 +18,4 @@ const app = (
 )
 
 ReactDOM.render(app, document.getElementById('root'))
+reportWebVitals()

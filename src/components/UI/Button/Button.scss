@@ -1,25 +1,31 @@
+@import "src/style/variables";
+@import "src/style/mixins";
+
 .btn {
     position: relative;
     place-content: center;
     place-items: center;
+    display: flex;
+    justify-content: center;
     width: fit-content;
-    font-size: .6rem;
-    font-weight: 700;
+    @include font-size(.6);
+    font-weight: 500;
     letter-spacing: 0.05em;
     white-space: nowrap;
     text-transform: uppercase;
     text-decoration: none;
-    margin: 0;
-    padding: 0.50rem .6rem;
-    color: #ffffff;
-    background-color: #24282f;
-    border: 1px solid rgb(60, 62, 68);
-    border-radius: 5px;
+    align-items: center;
+    @include margin(0, 0, 0, 0);
+    @include padding(.80rem, .6rem, .88rem, .6rem);
+    color: $fontColorButton;
+    background-color: $backgroundButton;
+    border: 1px solid $borderColorButton;
+    border-radius: $borderRadiusButton;
     outline: none;
     transition: all 0.22s;
 
     &:last-child {
-        margin: 0;
+        @include margin(0, 0, 0, 0);
     }
 
     &:hover {
@@ -41,6 +47,18 @@
 
     &.primary {
         color: #ffffff;
-        background-color: #42b983;
+        background-color: #ff9800;
+    }
+}
+
+@media (min-width: $table-width) {
+    .btn {
+        @include padding(.62rem, .6rem, .62rem, .6rem);
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .btn {
+        @include padding(.51rem, .6rem, .51rem, .6rem);
     }
 }
