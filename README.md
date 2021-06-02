@@ -8,6 +8,7 @@ You can also learn more about the character and add it to your favorite list.
 - React JS
 - Typescript
 - Redux
+- Redux-thunk
 - Rick and Morty API
 - IndexedDB
 - scss
