@@ -1,10 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import './PaginationItems.scss'
+import './Pagination.scss'
 
 interface IPaginationProps {
-    personages: {}[]
+    characters: {}[]
     page: number
     pages: number
     pageLimit: number
@@ -13,7 +13,7 @@ interface IPaginationProps {
     onChangePage: (page: number) => void
 }
 
-const PaginationItems: React.FC<IPaginationProps> = ({page, pages, personages, pageLimit, onNextPage, onPrevPage, onChangePage}) => {
+const Pagination: React.FC<IPaginationProps> = ({page, pages, characters, pageLimit, onNextPage, onPrevPage, onChangePage}) => {
     const getPaginationGroup = () => {
         let start = Math.floor((page - 1) / pageLimit) * pageLimit
         // @ts-ignore
@@ -31,7 +31,7 @@ const PaginationItems: React.FC<IPaginationProps> = ({page, pages, personages, p
                                 className={`pagination-list__item-prev ${page === 1 ? 'disabled' : ''}`}
                                 onClick={() => onPrevPage(page)}
                             >Prev</Link>
-                       </li>
+                        </li>
 
                         {getPaginationGroup().map((item, index) => {
                             return (
@@ -62,4 +62,4 @@ const PaginationItems: React.FC<IPaginationProps> = ({page, pages, personages, p
     )
 }
 
-export default PaginationItems
+export default Pagination

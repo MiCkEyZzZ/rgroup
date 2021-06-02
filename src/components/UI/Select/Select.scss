@@ -1,36 +1,55 @@
+@import "src/style/variables";
+@import "src/style/mixins";
+
 .select {
     position: relative;
-    margin: 0;
-    padding: 0;
+    @include margin(0, 0, 0, 0);
+    @include padding(0, 0, 0, 0);
 
     &-label {
         display: flex;
         align-items: center;
-        margin: 0;
-        padding: 0;
+        @include margin(0, 0, 0, 0);
+        @include padding(0, 0, 0, 0);
 
         &-title {
             font-weight: 500;
-            margin: 9px 0;
-            padding: 0;
-            color: rgb(158, 158, 158);
+            @include margin(9px, 0, 9px, 0);
+            @include padding(0, 0, 0, 0);
+            color: $fontColorTitleSelect;
         }
 
         &__text {
             display: flex;
             width: 100%;
-            font-size: .9rem;
+            @include font-size(.9);
             font-family: 'Segoe UI', sans-serif;
             align-items: center;
-            margin: 0;
-            padding: 0.7rem 1.0rem;
-            color: #ffffff;
-            border: 1px solid rgb(158, 158, 158);
-            border-radius: .2rem;
+            @include margin(0, 0, 0, 0);
+            @include padding(.7rem, 1rem, .7rem, 1rem);
+            color: $fontColorTextSelect;
+            border: 1px solid $borderColorTextSelect;
+            border-radius: $borderRadiusTextSelect;
             cursor: pointer;
 
             &.active {
-                border: 1px solid rgb(255, 152, 0);
+                border: 1px solid $borderColorTextActiveSelect;
+            }
+
+            &-icon {
+                position: absolute;
+                right: 15px;
+                width: 10px;
+                height: 10px;
+                @include margin(0, 0, 0, 0);
+                @include padding(0, 0, 0, 0);
+
+                & svg {
+                    position: absolute;
+                    top: 1px;
+                    @include margin(0, 0, 0, 0);
+                    @include padding(0, 0, 0, 0);
+                }
             }
         }
     }
@@ -40,222 +59,84 @@
         top: 50px;
         right: 0;
         width: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: rgb(60, 62, 68);
-        border-radius: .2rem;
+        @include margin(0, 0, 0, 0);
+        @include padding(0, 0, 0, 0);
+        background-color: $backgroundPlateSelect;
+        border-radius: $borderRadiusPlateSelect;
+        box-shadow: $boxShadowPlateSelect;
         overflow: hidden;
-        box-shadow: 0 3px 9px rgba(0, 0, 0, .6);
         z-index: 1;
 
         &__list {
             position: relative;
             width: 100%;
             list-style: none;
-            margin: 0;
-            padding: 5px 0 5px 0;
+            @include margin(0, 0, 0, 0);
+            @include padding(5px, 0, 5px, 0);
 
             &-item {
                 display: flex;
                 width: 100%;
                 height: 40px;
                 align-items: center;
-                margin: 0;
-                padding: 0 5px 0 15px;
-                color: #ffffff;
+                @include margin(0, 0, 0, 0);
+                @include padding(0, 5px, 0, 15px);
+                color: $fontColorItemPlateSelect;
                 transition: all 0.22s;
 
                 &:hover {
-                    color: #ffffff;
-                    background-color: rgb(36, 40, 47);
+                    color: $fontColorItemHoverPlateSelect;
+                    background-color: $backgroundItemHoverPlateSelect;
                     cursor: pointer;
                     transition: all 0.22s;
                 }
 
                 &.active {
-                    color: rgb(255, 152, 0);
-                    background-color: rgb(36, 40, 47);
+                    color: $fontColorItemActivePlateSelect;
+                    background-color: $backgroundItemActivePlateSelect;
                 }
 
                 &:last-child {
-                    margin: 0;
+                    @include margin(0, 0, 0, 0);
                 }
             }
         }
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $table-width) {
     .select {
-        position: relative;
-        margin: 0 10px 0 0;
-        padding: 0;
+        @include margin(0, 0, 0, 0);
 
         &-label {
-            display: flex;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-
             &-title {
-                font-weight: 500;
-                margin: 9px 8px 0 0;
-                padding: 0;
-                color: rgb(158, 158, 158);
+                @include margin(9px, 0, 0, 0);
             }
 
             &__text {
-                display: flex;
                 width: 200px;
-                font-size: .9rem;
-                font-family: 'Segoe UI', sans-serif;
-                align-items: center;
-                margin: 0;
-                padding: 0.7rem 1.0rem;
-                color: #ffffff;
-                border: 1px solid rgb(158, 158, 158);
-                border-radius: .2rem;
-                cursor: pointer;
-
-                &.active {
-                    border: 1px solid rgb(255, 152, 0);
-                }
-            }
-        }
-
-        &-plate {
-            position: absolute;
-            top: 50px;
-            right: 0;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: rgb(60, 62, 68);
-            border-radius: .2rem;
-            overflow: hidden;
-            box-shadow: 0 3px 9px rgba(0, 0, 0, .6);
-
-            &__list {
-                position: relative;
-                width: 100%;
-                list-style: none;
-                margin: 0;
-                padding: 5px 0 5px 0;
-
-                &-item {
-                    display: flex;
-                    width: 100%;
-                    height: 40px;
-                    align-items: center;
-                    margin: 0;
-                    padding: 0 5px 0 15px;
-                    color: #ffffff;
-                    transition: all 0.22s;
-
-                    &:hover {
-                        color: #ffffff;
-                        background-color: rgb(36, 40, 47);
-                        cursor: pointer;
-                        transition: all 0.22s;
-                    }
-
-                    &.active {
-                        color: rgb(255, 152, 0);
-                        background-color: rgb(36, 40, 47);
-                    }
-
-                    &:last-child {
-                        margin: 0;
-                    }
-                }
             }
         }
     }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: $desktop-width) {
     .select {
-        position: relative;
-        margin: 0 10px 0 0;
-        padding: 0;
+        @include margin(0, 9px, 0, 0);
+
+        &:last-child {
+            @include margin(0, 0, 0, 0);
+        }
 
         &-label {
-            display: flex;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-
             &-title {
-                font-weight: 500;
-                margin: 9px 8px 0 0;
-                padding: 0;
-                color: rgb(158, 158, 158);
-            }
-
-            &__text {
-                display: flex;
-                width: 200px;
-                font-size: .9rem;
-                font-family: 'Segoe UI', sans-serif;
-                align-items: center;
-                margin: 0;
-                padding: 0.7rem 1.0rem;
-                color: #ffffff;
-                border: 1px solid rgb(158, 158, 158);
-                border-radius: .2rem;
-                cursor: pointer;
-
-                &.active {
-                    border: 1px solid rgb(255, 152, 0);
-                }
+                @include margin(9px, 8px, 0, 0);
             }
         }
 
         &-plate {
-            position: absolute;
-            top: 50px;
-            right: 0;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: rgb(60, 62, 68);
-            border-radius: .2rem;
-            overflow: hidden;
-            box-shadow: 0 3px 9px rgba(0, 0, 0, .6);
-
             &__list {
-                position: relative;
-                width: 100%;
-                list-style: none;
-                margin: 0;
-                padding: 5px 0 5px 0;
-
-                &-item {
-                    display: flex;
-                    width: 100%;
-                    height: 40px;
-                    align-items: center;
-                    margin: 0;
-                    padding: 0 5px 0 15px;
-                    color: #ffffff;
-                    transition: all 0.22s;
-
-                    &:hover {
-                        color: #ffffff;
-                        background-color: rgb(36, 40, 47);
-                        cursor: pointer;
-                        transition: all 0.22s;
-                    }
-
-                    &.active {
-                        color: rgb(255, 152, 0);
-                        background-color: rgb(36, 40, 47);
-                    }
-
-                    &:last-child {
-                        margin: 0;
-                    }
-                }
+                @include padding(5px, 0, 5px, 0);
             }
         }
     }

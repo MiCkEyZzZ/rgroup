@@ -1,10 +1,12 @@
+@import "src/style/mixins";
+
 .loader {
     position: relative;
     width: 11em;
     height: 11em;
     font-size: 10px;
     text-indent: -9999em;
-    margin: 500px auto;
+    @include margin(500px, auto, 500px, auto);
     border-radius: 50%;
     background: #ffffff;
     background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
@@ -38,7 +40,7 @@
         content: '';
         width: 75%;
         height: 75%;
-        margin: auto;
+        @include margin(auto, auto, auto, auto);
         border-radius: 50%;
         background-color: rgb(36, 40, 47);
     }

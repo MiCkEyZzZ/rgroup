@@ -1,9 +1,9 @@
-import * as UsersActionCreators from './dataUsersAction'
-import * as UserActionCreators from './dataUserAction'
+import * as CharactersActionCreators from './dataCharactersAction'
+import * as CharacterActionCreators from './dataCharacterAction'
 
 const actionsObject = {
-    ...UsersActionCreators,
-    ...UserActionCreators
+    ...CharactersActionCreators,
+    ...CharacterActionCreators
 }
 
 export default actionsObject

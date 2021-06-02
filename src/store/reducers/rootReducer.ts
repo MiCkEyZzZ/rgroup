@@ -1,11 +1,11 @@
 import {combineReducers} from '@reduxjs/toolkit'
 
-import {dataUsersReducer} from './dataUsersReducer'
-import {dataUserReducer} from './dataUserReducer'
+import {dataCharactersReducer} from './dataCharactersReducer'
+import {dataCharacterReducer} from './dataCharacterReducer'
 
 export const rootReducer = combineReducers({
-    dataUsers: dataUsersReducer,
-    dataUser: dataUserReducer
+    dataCharacters: dataCharactersReducer,
+    dataCharacter: dataCharacterReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>

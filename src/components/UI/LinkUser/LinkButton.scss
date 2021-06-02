@@ -1,0 +1,43 @@
+@import "src/style/variables";
+@import "src/style/mixins";
+
+.link {
+    position: relative;
+    place-content: center;
+    place-items: center;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    @include font-size(.6);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-decoration: none;
+    align-items: center;
+    @include margin(0, 0, 0, 5px);
+    @include padding(.80rem, .6rem, .65rem, .6rem);
+    color: $fontColorLink;
+    background-color: $backgroundLink;
+    border: 1px solid $borderColorLink;
+    border-radius: $borderRadiusLink;
+    outline: none;
+    transition: all 0.22s;
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: $table-width) {
+    .link {
+        @include padding(.51rem, .6rem, .40rem, .6rem);
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .link {
+        @include padding(.44rem, .6rem, .40rem, .6rem);
+    }
+}
