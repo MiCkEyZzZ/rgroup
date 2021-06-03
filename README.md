@@ -10,8 +10,6 @@ You can also learn more about the character and add it to your favorite list.
 - Redux
 - Redux-thunk
 - Rick and Morty API
-- IndexedDB
-- scss
 ```
 
 **Website:**
