@@ -30,6 +30,7 @@
             color: $fontColorHeaderTitle;
             border: none;
             z-index: 1;
+            font-size: calc( (100vw - 320px)/(768 - 320) * (24 - 16) + 1.75rem);
         }
 
         &__image {
@@ -72,7 +73,7 @@
     .container-characters {
         &-header {
             &__title {
-                font-size: calc( (100vw - 320px)/(768 - 320) * (24 - 16) + 2.75rem);
+                font-size: calc( (100vw - 320px)/(768 - 320) * (24 - 16) + 3.75rem);
             }
         }
 
