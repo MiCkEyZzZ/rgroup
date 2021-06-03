@@ -8,7 +8,7 @@ using the technologies described below.
 In this App, you can find your favorite character of Rick and Morty. 
 You can also learn more about the character and add it to your favorite list. 
 
-**Technologies used:**
+**Technologies used**
 ```
 - React JS
 - Typescript
