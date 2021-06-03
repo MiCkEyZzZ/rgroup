@@ -4,6 +4,7 @@ In May 2021, I accepted a coding challenge to interview for React Developer at R
 A text message was sent to me vie email and describe the challenge. In June 2021, I decided to take
 on the challenge just for fun. The main goal that motivated me to try to implement this application
 using the technologies described below. 
+Application description
 In this App, you can find your favorite character of Rick and Morty. 
 You can also learn more about the character and add it to your favorite list. 
 
