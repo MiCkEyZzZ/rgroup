@@ -17,7 +17,7 @@ You can also learn more about the character and add it to your favorite list.
 **Website:**
 >You can try this app [click here]()
 
-**Run locally with:**
+**Running**
 
 ```
 git clone https://github.com/MiCkEyZzZ/rgroup.git
