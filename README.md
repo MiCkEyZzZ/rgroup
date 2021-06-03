@@ -12,7 +12,7 @@ You can also learn more about the character and add it to your favorite list.
 - Rick and Morty API
 ```
 
-**Website:**
+**Website**
 >You can try this app [click here]()
 
 **Running**
