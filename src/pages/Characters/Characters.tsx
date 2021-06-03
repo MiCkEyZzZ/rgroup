@@ -4,6 +4,7 @@ import './Characters.scss'
 import mainPicture from '../../assets/main.svg'
 
 import {
+    EmptyCharacters,
     FilterCharacters,
     FooterCharacters,
     FormCharacters,
@@ -30,7 +31,10 @@ const Characters: React.FC<IUsersProps> = () => {
         sortByStatus,
         pageLimit } = useTypedSelector(state => state.dataCharacters)
 
+    const handleValidationInput = () => {}
+
     const handleChangeInput = (evt: ChangeEvent<HTMLInputElement>) => {
+        handleValidationInput()
         setCharactersQuery(evt.target.value)
     }
 
@@ -73,12 +77,12 @@ const Characters: React.FC<IUsersProps> = () => {
                     />
                 </section>
                 <section className="container-characters-footer">
-                    <ListCharacters
+                    {characters.length ? <ListCharacters
                         characters={characters}
                         error={error}
-                    />
+                    /> : <EmptyCharacters />}
 
-                    <PaginationCharacters
+                    {characters.length ? <PaginationCharacters
                         characters={characters}
                         page={page}
                         pages={info.pages}
@@ -86,7 +90,7 @@ const Characters: React.FC<IUsersProps> = () => {
                         onNextPage={goToNextPage}
                         onPrevPage={goToPreviousPage}
                         onChangePage={changePage}
-                    />
+                    /> : null}
                 </section>
             </main>
             <FooterCharacters />

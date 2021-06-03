@@ -94,11 +94,11 @@
 
                 &-status {
                     display: flex;
-                    align-items: center;
                     width: 343px;
                     @include font-size(1);
                     font-weight: 500;
                     text-transform: capitalize;
+                    align-items: center;
                     @include margin(1px, 0, 0, 0);
                     @include padding(0, 0, 0, 0);
                     color: $fontColorItemStatusUserList;

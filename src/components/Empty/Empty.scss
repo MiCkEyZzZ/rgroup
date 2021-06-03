@@ -1,0 +1,20 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(50.2vh - 60px);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  &-container {
+    width: 100%;
+    max-width: 1696px;
+    margin: 0;
+    padding: 0;
+
+    &__title {
+      color: #ffffff;
+    }
+  }
+}

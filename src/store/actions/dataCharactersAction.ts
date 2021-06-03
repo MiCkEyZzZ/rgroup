@@ -8,19 +8,22 @@ export const fetchCharactersList = (page: number, query: string, sortByGender: s
         dispatch({type: CharactersActionTypes.FETCH_INFO})
         const response = await fetch(`${URL}${PAGE_PATH}${page}${NAME_PATH}${query}${sortByGender !== null ? `${GENDER_PATH}${sortByGender}` : ``}${sortByStatus !== null ? `${STATUS_PATH}${sortByStatus}` : ``}`, {method: `GET`})
             .then(response => response.json())
+
         if (response.ok) return response.json()
+
         setTimeout(() => {
             dispatch({type: CharactersActionTypes.FETCH_CHARACTERS_SUCCESS, payload: response.results})
             dispatch({type: CharactersActionTypes.FETCH_INFO_SUCCESS, payload: response.info})
         }, 300)
+
     } catch (error) {
         dispatch({
             type: CharactersActionTypes.FETCH_CHARACTERS_ERROR,
-            payload: error.message
+            payload: error
         })
         dispatch({
             type: CharactersActionTypes.FETCH_INFO_ERROR,
-            payload: error.message
+            payload: error
         })
     }
 }
