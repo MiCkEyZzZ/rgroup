@@ -14,7 +14,7 @@ You can also learn more about the character and add it to your favorite list.
 - scss
 ```
 
-*Website:**
+**Website:**
 >You can try this app [click here]()
 
 **Run locally with:**
